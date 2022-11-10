@@ -34,6 +34,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 .main__inner {
   display: flex;
