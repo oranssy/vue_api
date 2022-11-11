@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderCont />
-    <TitleCont name1="movie" name2="reference api" />
+    <TitleCont name1="List of movies" name2="using API" />
     <section class="cont__list">
       <h2>Popular List</h2>
       <div class="container">

@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderCont />
-    <TitleCont name1="youtube" name2="api" />
+    <TitleCont name1="List of YouTube" name2="using API" />
     <ContactCont />
     <FooterCont />
   </div>

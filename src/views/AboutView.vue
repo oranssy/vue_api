@@ -1,7 +1,10 @@
 <template>
   <div>
     <HeaderCont />
-    <TitleCont name1="About" name2="API Basic" />
+    <TitleCont
+      name1="about"
+      name2="Application Programming Interface utilization"
+    />
     <ContactCont />
     <FooterCont />
   </div>

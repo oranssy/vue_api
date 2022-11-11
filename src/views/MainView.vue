@@ -25,10 +25,10 @@ export default {
   data: function () {
     return {
       titles: [
-        { text: "we provide" },
-        { text: "visual coding" },
+        { text: "We provide" },
+        { text: "a visual coding" },
         { text: "solutions" },
-        { text: "for you API" },
+        { text: "that utilizes API." },
       ],
     };
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
     <HeaderCont />
-    <TitleCont name1="reference" name2="reference api" />
+    <TitleCont name1="CSS Reference" name2="Using API" />
     <section class="cont__refer">
       <div class="container">
         <div class="refer__inner">
@@ -82,7 +82,7 @@ export default {
       // padding: 10px;
 
       &:hover {
-        background-color: #b18bf3b0;
+        background-color: #d7c8f1b0;
         color: #000;
       }
 
@@ -100,6 +100,7 @@ export default {
       .title {
         flex: 1 1 26%;
         text-align: center;
+        font-family: var(--font-main);
       }
 
       .desc {
