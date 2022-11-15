@@ -43,10 +43,10 @@ export default {
   flex-direction: column;
   height: 100vh;
   color: var(--black);
+
   > div {
-    font-size: 9vw;
-    white-space: nowrap;
-    line-height: 0.9;
+    font-size: 8.3vw;
+    line-height: 1.1;
     text-transform: uppercase;
   }
 }

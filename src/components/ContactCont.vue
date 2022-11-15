@@ -1,7 +1,7 @@
 <template>
   <section class="cont__contact">
     <p>Let's create something new</p>
-    <h3>LET'S Get IN <em>TOUBH</em></h3>
+    <h3>LET'S Get IN <em>TOUCH</em></h3>
     <a href="mailto:oranssy.daum.net">oranssy.daum.net</a>
   </section>
 </template>
@@ -26,10 +26,11 @@
   }
 
   h3 {
-    font-size: 9vw;
+    font-size: 7vw;
     font-family: var(--font-main);
-    line-height: 1;
+    line-height: 1.2;
     text-align: center;
+    margin-bottom: 20px;
 
     em {
       display: block;
