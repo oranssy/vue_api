@@ -2,11 +2,11 @@
   <div>
     <HeaderCont />
     <TitleCont name1="List of movies" name2="using API" />
-    <section class="cont__list">
+    <section id="movie__list">
       <h2>Popular List</h2>
-      <div class="container">
-        <div class="list__inner">
-          <div class="movie__slider">
+      <div class="cont__list">
+        <div class="container">
+          <div class="list__inner">
             <swiper
               :effect="'coverflow'"
               :grabCursor="true"
@@ -44,46 +44,46 @@
                 </li>
               </swiper-slide>
             </swiper>
-          </div>
-          <!-- movie__slider -->
+            <!-- // swiper -->
 
-          <div class="movie__search">
-            <div class="container">
-              <h2>검색하기</h2>
-              <form @submit.prevent="SearchMovies()">
-                <input
-                  type="search"
-                  id="search"
-                  placeholder="검색할 텍스트를 입력해주세요."
-                  v-model="search"
-                />
-                <button type="submit">검색</button>
-              </form>
-            </div>
-          </div>
-          <!-- //movie__search -->
-
-          <div class="cont__movie">
-            <div class="container">
-              <div class="movie__inner">
-                <ul>
-                  <li v-for="movie in movies" :key="movie.id">
-                    <a :href="`https://image.tmdb.org/movie/${movie.id}`">
-                      <img
-                        :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
-                        :alt="movie.title"
-                      />
-                      <em>
-                        <span class="title">{{ movie.title }}</span>
-                        <span class="star">★ {{ movie.vote_average }}</span>
-                      </em>
-                    </a>
-                  </li>
-                </ul>
+            <div class="movie__search">
+              <div class="container">
+                <h2>검색하기</h2>
+                <form @submit.prevent="SearchMovies()">
+                  <input
+                    type="search"
+                    id="search"
+                    placeholder="검색할 텍스트를 입력해주세요."
+                    v-model="search"
+                  />
+                  <button type="submit">검색</button>
+                </form>
               </div>
             </div>
+            <!-- //movie__search -->
+
+            <div class="cont__movie">
+              <div class="container">
+                <div class="movie__inner">
+                  <ul>
+                    <li v-for="movie in movies" :key="movie.id">
+                      <a :href="`https://image.tmdb.org/movie/${movie.id}`">
+                        <img
+                          :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
+                          :alt="movie.title"
+                        />
+                        <em>
+                          <span class="title">{{ movie.title }}</span>
+                          <span class="star">★ {{ movie.vote_average }}</span>
+                        </em>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- //cont__movie -->
           </div>
-          <!-- //cont__movie -->
         </div>
       </div>
     </section>
@@ -161,16 +161,21 @@ export default {
 
 <style lang="scss">
 // 인기 순위 목록 (슬라이더)
-.cont__list {
-  width: 100%;
-  height: 740px;
-  overflow: hidden;
-
+#movie__list {
   h2 {
     color: var(--black);
     margin-bottom: 40px;
-    padding: 0 18%;
-    font-weight: bold;
+    padding: 0 11%;
+  }
+}
+
+.cont__list {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+
+  .swiper-pagination-bullet {
+    background: #797979;
   }
 
   .container {
@@ -189,14 +194,14 @@ export default {
 
     .swiper-slide {
       // width: 100%;
-      width: 32%;
+      width: 20%;
 
       li {
         // justify-content: space-between;
         // width: 30%;
         text-align: center;
         padding: 16px;
-        border: 2px solid rgba(144, 144, 144, 0.29);
+        border: 2px solid rgba(0, 0, 0, 0.1);
         position: relative;
         // margin-right: 15px;
         transition: transform 0.2s ease;
@@ -208,10 +213,11 @@ export default {
 
         &:hover .title {
           color: var(--black);
+          font-weight: bold;
         }
 
         &:hover .star {
-          background: #031035;
+          background: #181d2c;
           color: var(--white);
         }
 
@@ -226,8 +232,14 @@ export default {
         }
 
         a {
+          img {
+          }
+
           em {
             color: var(--black);
+
+            span {
+            }
 
             .title {
               display: inline-block;
@@ -237,7 +249,7 @@ export default {
             }
 
             .star {
-              background: rgba(255, 255, 255, 0.5);
+              background: rgba(0, 0, 0, 0.2);
               color: #040814;
               position: absolute;
               right: 16px;
@@ -259,16 +271,16 @@ export default {
   }
 }
 
-// 검색창
+// 영화 검색창
 .movie__search {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 
   .container {
     position: relative;
   }
 
   h2 {
-    color: var(--white);
+    color: var(--black);
     font-size: 40px;
     text-indent: -9999px;
     height: 0;
@@ -276,9 +288,9 @@ export default {
 
   input {
     background: #000;
-    border: 2px solid var(--white);
+    border: 2px solid var(--black);
     border-radius: 50px;
-    color: var(--white);
+    color: var(--black);
     width: 100%;
     padding: 10px 30px;
     font-family: var(--font-kor3);
@@ -297,13 +309,42 @@ export default {
     z-index: 1000;
 
     &:hover {
-      background: #101626;
-      color: var(--white);
+      background: #1f2126;
+      border: 1px solid #101626;
+      color: var(--black);
     }
   }
 }
 
-// 기본 정보
+// 기본 영화정보 버튼
+.movie__btn {
+  margin-bottom: 50px;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 300px;
+
+    button {
+      padding: 5px 16px;
+      border-radius: 50px;
+      font-family: var(--font-kor2);
+      font-weight: bold;
+      font-size: 16px;
+      color: #101626;
+      cursor: pointer;
+
+      &:hover {
+        background: #101626;
+        border: 1px solid #383838;
+        color: var(--black);
+      }
+    }
+  }
+}
+
+// 기본 영화정보 목록
 .movie__inner {
   ul {
     display: flex;
@@ -313,8 +354,7 @@ export default {
     li {
       width: 23%;
       position: relative;
-      border: 2px solid rgba(196, 196, 188, 0.296);
-      background: rgba(233, 231, 224, 0.516);
+      border: 1px solid rgba(255, 255, 255, 0.4);
       padding: 20px;
       margin-bottom: 36px;
       transition: transform 0.2s ease;
@@ -328,8 +368,8 @@ export default {
       }
 
       &:hover .star {
-        background: rgba(0, 0, 0, 0.7);
-        color: var(--white);
+        background: #031035;
+        color: var(--black);
       }
 
       em {
@@ -343,12 +383,12 @@ export default {
       .title {
         padding: 10px 0;
         display: inline-block;
-        color: rgba(0, 0, 0, 0.4);
+        color: rgba(255, 255, 255, 0.3);
       }
 
       .star {
-        background: rgba(88, 88, 88, 0.318);
-        color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.5);
+        color: #040814;
         position: absolute;
         left: 20px;
         top: 20px;

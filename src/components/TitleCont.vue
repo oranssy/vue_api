@@ -21,14 +21,15 @@ export default {
 <style lang="scss">
 // cont__title
 .cont__title {
-  padding: 14vmax 0;
+  padding: 9vmax 0;
   font-size: 80px;
   font-family: var(--font-main);
   color: var(--black);
-  line-height: 1;
+  line-height: 1.1;
   text-transform: uppercase;
+
   strong {
-    display: block;
+    display: block; // 줄바꿈을 위함
   }
 }
 </style>

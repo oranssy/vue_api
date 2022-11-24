@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: var(--white);
+  color: var(--black);
   text-transform: uppercase;
 
   p {
@@ -40,14 +40,14 @@
   a {
     font-size: 16px;
     font-family: var(--font-sub2);
-    border: 1px solid var(--white);
+    border: 1px solid var(--black);
     border-radius: 50px;
-    padding: 1vw 4vw;
-    color: var(--white);
+    padding: 0.5vw 2vw;
+    color: var(--black);
 
     &:hover {
-      background: #fff;
-      color: #000;
+      background: #000;
+      color: #fff;
     }
   }
 }

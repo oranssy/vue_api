@@ -2,15 +2,15 @@
   <div>
     <HeaderCont />
     <TitleCont name1="Unsplash list" name2="using API" />
-    <section class="cont__refer">
-      <div class="container">
-        <div class="unsplash__inner">
-          <div class="unsplash__slider"></div>
-          <div class="unsplash__search"></div>
-          <div class="unsplash__images">
+    <section id="unsplash__list">
+      <div class="cont__refer">
+        <h2>Random Img</h2>
+        <div class="container">
+          <div class="unsplashList__inner">
+            <!-- <Swiper></Swiper> -->
             <ul>
               <li v-for="splash in splashes" :key="splash.id">
-                <a href="#">
+                <a href="https://unsplash.com/photos/${props.randoms.id}">
                   <img :src="splash.urls.regular" :alt="splash.id" />
                 </a>
               </li>
